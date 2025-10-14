@@ -6,10 +6,8 @@ El objetivo es explorar las tendencias en las canciones más populares de Spotif
 ## 📊 Dataset
 Dataset: [Spotify Dataset - Gati Ambaliya](https://www.kaggle.com/datasets/ambaliyagati/spotify-dataset-for-playing-around-with-sql)
 
-## 🧰 Tecnologías
+## 🧰 Lenguaje
 - Python (pandas, matplotlib, seaborn)
-- SQL (para consultas exploratorias)
-- Tableau (para visualizaciones finales)
 
 ## 📈 Objetivos
 1. Analizar la relación entre popularidad y características musicales.  
