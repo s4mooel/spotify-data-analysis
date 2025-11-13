@@ -9,10 +9,6 @@ Dataset: [Spotify Dataset - Gati Ambaliya](https://www.kaggle.com/datasets/ambal
 ##  Lenguaje
 - Python (pandas, matplotlib, seaborn)
 
-##  Objetivos
-1. Analizar la relación entre popularidad y características musicales.  
-2. Identificar patrones en los géneros más populares.  
-3. Visualizar insights sobre energía, tempo y valencia.
 
 ---
 
