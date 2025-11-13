@@ -1,7 +1,6 @@
 import pandas as pd
 
 def calculate_statistics(df):
-    """Calcula estadísticas descriptivas"""
     stats = {
         'popularity_stats': {
             'max': df['popularity'].max(),
@@ -22,7 +21,6 @@ def calculate_statistics(df):
     return stats
 
 def top_genres_analysis(df, top_n=10):
-    """Analiza los géneros más populares"""
     genre_analysis = df.groupby('genre').agg({
         'popularity': ['mean', 'count'],
         'duration_min': 'mean',
@@ -35,7 +33,6 @@ def top_genres_analysis(df, top_n=10):
     return top_genres
 
 def top_artists_analysis(df, top_n=10):
-    """Analiza los artistas más populares"""
     artist_analysis = df.groupby('artists').agg({
         'popularity': ['mean', 'count'],
         'duration_min': 'mean'

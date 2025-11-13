@@ -22,30 +22,30 @@ def main():
     
     try:
         # Cargar datos
-        print("📊 Cargando datos...")
+        print("Cargando datos...")
         df = load_spotify_data('data/spotify_tracks.csv') 
         
         # Información básica
         basic_info = get_basic_info(df)
         
         # Mostrar información básica
-        print(f"\n📊 RESUMEN DEL DATASET:")
-        print(f"   🎵 Total de canciones: {basic_info['total_songs']:,}")
-        print(f"   🎭 Géneros únicos: {basic_info['total_genres']}")
-        print(f"   👨‍🎤 Artistas únicos: {basic_info['total_artists']}")
-        print(f"   💿 Álbumes únicos: {basic_info['total_albums']}")
-        print(f"   ⚠️  Canciones explícitas: {basic_info['explicit_songs']} ({basic_info['explicit_songs']/basic_info['total_songs']*100:.1f}%)")
-        print(f"   📈 Popularidad promedio: {basic_info['avg_popularity']:.2f}")
-        print(f"   ⏱️  Duración promedio: {basic_info['avg_duration_min']:.2f} minutos")
+        print(f"\nRESUMEN DEL DATASET:")
+        print(f"   Total de canciones: {basic_info['total_songs']:,}")
+        print(f"   Géneros únicos: {basic_info['total_genres']}")
+        print(f"   Artistas únicos: {basic_info['total_artists']}")
+        print(f"   Álbumes únicos: {basic_info['total_albums']}")
+        print(f"   Canciones explícitas: {basic_info['explicit_songs']} ({basic_info['explicit_songs']/basic_info['total_songs']*100:.1f}%)")
+        print(f"   Popularidad promedio: {basic_info['avg_popularity']:.2f}")
+        print(f"   ⏱Duración promedio: {basic_info['avg_duration_min']:.2f} minutos")
         
         # Análisis estadístico
-        print("\n📈 Calculando estadísticas detalladas...")
+        print("\n Calculando estadísticas detalladas...")
         stats = calculate_statistics(df)
         
         # Análisis por género
-        print("\n🎭 Analizando géneros...")
+        print("\n Analizando géneros...")
         top_genres = top_genres_analysis(df)
-        print("\n🏆 TOP 5 GÉNEROS MÁS POPULARES:")
+        print("\n TOP 5 GÉNEROS MÁS POPULARES:")
         for i, (genre, data) in enumerate(top_genres.head().iterrows(), 1):
             print(f"   {i}. {genre}:")
             print(f"      Popularidad: {data['avg_popularity']:.2f}")
@@ -53,30 +53,30 @@ def main():
             print(f"      Duración promedio: {data['avg_duration_min']:.2f} min")
         
         # Análisis de artistas
-        print("\n👨‍🎤 Analizando artistas...")
+        print("\n Analizando artistas...")
         top_artists = top_artists_analysis(df)
-        print("\n🎤 TOP 5 ARTISTAS MÁS POPULARES:")
+        print("\n TOP 5 ARTISTAS MÁS POPULARES:")
         for i, (artist, data) in enumerate(top_artists.head().iterrows(), 1):
             print(f"   {i}. {artist}:")
             print(f"      Popularidad: {data['avg_popularity']:.2f}")
             print(f"      Canciones: {data['song_count']}")
         
         # Visualizaciones
-        print("\n🎨 Generando visualizaciones...")
+        print("\n Generando visualizaciones...")
         create_popularity_charts(df)
         create_duration_analysis(df)
         create_artist_analysis(df)
         
         print("\n" + "=" * 50)
-        print("✅ ¡Análisis completado exitosamente!")
-        print("📁 Los gráficos se guardaron en la carpeta 'images/'")
-        print("🎯 Puedes revisar los archivos PNG generados")
+        print(" ¡Análisis completado exitosamente!")
+        print(" Los gráficos se guardaron en la carpeta 'images/'")
+        print(" Puedes revisar los archivos PNG generados")
         
     except FileNotFoundError:
-        print("❌ Error: No se encontró el archivo 'spotify_tracks.csv'")
+        print(" Error: No se encontró el archivo 'spotify_tracks.csv'")
         print("   Asegúrate de que el archivo esté en la carpeta correcta")
     except Exception as e:
-        print(f"❌ Error inesperado: {e}")
+        print(f" Error inesperado: {e}")
 
 if __name__ == "__main__":
     main()

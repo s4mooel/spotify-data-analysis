@@ -1,7 +1,6 @@
 import pandas as pd
 
 def load_spotify_data(file_path):
-    """Carga y limpia los datos de Spotify"""
     df = pd.read_csv(file_path)
     
     # Limpieza básica
@@ -15,7 +14,6 @@ def load_spotify_data(file_path):
     return df
 
 def get_basic_info(df):
-    """Obtiene información básica del dataset"""
     info = {
         'total_songs': len(df),
         'total_genres': df['genre'].nunique(),
